@@ -37,6 +37,12 @@ app.use(
         secret: process.env.SECRET, algorithms: ["HS256"],
     }).unless({ path: ["/auth"]  }),
 )
+
+app.get('/', (req, res) => {
+  res.json('API conectada')
+})
+app.use('/', routes)
+
 app.use(function (err, req, res, next) {
     console.log("unauthorized middleware err:", err)
     if (err.name === "UnauthorizedError") {
@@ -50,11 +56,6 @@ app.use(function (err, req, res, next) {
     next('------->',err)
   });
 
-
-app.get('/', (req, res) => {
-    res.json('API conectada')
-})
-app.use('/', routes)
 
 const PORT = process.env.PORT || 8000;
 const server = app.listen(PORT, () => {
