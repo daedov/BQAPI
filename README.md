@@ -25,13 +25,13 @@ Recuerda que el valor de email y password son referenciales, por lo que debes ca
 
 _Método HTTP_: `POST`
 
-_Ruta requerida: `https://apiburgerqueenv1.herokuapp.com/auth`_
+_Ruta requerida: `https://burgerqueenapi-production.up.railway.app/auth`_
 
 _Uso de Axios para hacer la petición HTTP_
 
 ```javascript
 axios
-  .post("https://apiburgerqueenv1.herokuapp.com/auth", {
+  .post("https://burgerqueenapi-production.up.railway.app/auth", {
     email: 'correo@correo.com', //valor referencial
     password: '123456', //valor referencial
   })
@@ -75,7 +75,7 @@ useEffect(() => {
     Authorization: `Bearer ${localStorage.getItem("token")}`,
   };
   axios
-    .get("https://apiburgerqueenv1.herokuapp.com/", { headers })
+    .get("https://burgerqueenapi-production.up.railway.app/", { headers })
     .then((response) => {
       console.log(response);
     })
@@ -97,14 +97,14 @@ Para obtener una orden necesitas indicar el id de la orden que quieres revisar.
 ```
 Método HTTP: GET
 
-Ruta requerida: https://apiburgerqueenv1.herokuapp.com/orders/:id
+Ruta requerida: https://burgerqueenapi-production.up.railway.app/orders/:id
 ```
 
 **Obtener todas las ordenes**
 ```
 Método HTTP: GET
 
-Ruta requerida: https://apiburgerqueenv1.herokuapp.com/orders
+Ruta requerida: https://burgerqueenapi-production.up.railway.app/orders
 ```
 
 **Agregar una orden**
@@ -115,7 +115,7 @@ Para agregar una orden necesitas ingresar el nombre del cliente (client), la can
 
 Método HTTP: POST
 
-Ruta requerida: https://apiburgerqueenv1.herokuapp.com/orders
+Ruta requerida: https://burgerqueenapi-production.up.railway.app/orders
 ```
 
 *Ejemplo de datos necesarios*
@@ -164,7 +164,7 @@ Para editar la orden necesitas indicar el nombre del producto y solo puedes edit
 ```
 Método HTTP: PUT
 
-Ruta requerida: https://apiburgerqueenv1.herokuapp.com/orders/products/:id
+Ruta requerida: https://burgerqueenapi-production.up.railway.app/orders/products/:id
 ```
 
 *Ejemplo de datos necesarios*
@@ -212,7 +212,7 @@ Los estados de la orden son _pending, delivering, delivered y canceled_. Debes i
 ```
 Método HTTP: PUT
 
-Ruta requerida: https://apiburgerqueenv1.herokuapp.com/orders/status/:id
+Ruta requerida: https://burgerqueenapi-production.up.railway.app/orders/status/:id
 ```
 
 *Ejemplo de datos necesarios*
@@ -239,5 +239,5 @@ Para eliminar la orden necesitas ingresar el id de la orden y solo puede ser rea
 ```
 Método HTTP: DELETE
 
-Ruta requerida: https://apiburgerqueenv1.herokuapp.com/orders/:id
+Ruta requerida: https://burgerqueenapi-production.up.railway.app/orders/:id
 ```
