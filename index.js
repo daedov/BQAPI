@@ -52,7 +52,7 @@ app.use(function (err, req, res, next) {
 
 
 app.get('/', (req, res) => {
-    res.send(<p>API conectada</p>)
+    res.json('API conectada')
 })
 app.use('/', routes)
 
