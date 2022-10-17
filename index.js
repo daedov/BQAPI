@@ -35,7 +35,7 @@ app.use(cors({
 app.use(
     expressjwt({
         secret: process.env.SECRET, algorithms: ["HS256"],
-    }).unless({ path: ["/, /auth"]  }),
+    }).unless({ path: ["/auth"]  }),
 )
 app.use(function (err, req, res, next) {
     console.log("unauthorized middleware err:", err)
@@ -52,7 +52,7 @@ app.use(function (err, req, res, next) {
 
 
 app.get('/', (req, res) => {
-    res.json({ msg: 'API conectada ;)' })
+    res.send({ msg: 'API conectada)' })
 })
 app.use('/', routes)
 
