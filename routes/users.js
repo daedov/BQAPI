@@ -3,7 +3,7 @@ const router = express.Router()
 const { registerUser, getUsersList, updateUser } = require('../controllers/users.js')
 
 
-router.post('/', (req, res) => { // antiguo '/register'
+router.post('/', (req, res) => {
     registerUser(req, res)
 })
 router.get('/', (req, res) => {

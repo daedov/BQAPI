@@ -27,7 +27,7 @@ const getUsersList = async (req, res) => {
       Users
         .find({ commerce: req.auth.commerce })
         .then((result) => {
-          return res.status(200).json({ sucess: true, message: "operación exitosa", result })
+          return res.status(200).json({ success: true, message: "operación exitosa", result })
         })
         .catch((error) => {
           res.status(500).json({ success: false, message: "Hubo un error al conectarse a la base de datos, intenta nuevamente" })
@@ -46,7 +46,7 @@ const updateUser = async (req, res) => {
           {new: true}
         )
         .then((result) => {  
-              return res.status(200).json({ sucess: true, message: 'operación exitosa has editado', result })   
+              return res.status(200).json({ success: true, message: 'operación exitosa has editado', result })   
         })
         .catch((error) => {
           res.json({ success: false, message: 'Hubo un error al conectarse a la base de datos, intenta nuevamente' })

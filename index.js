@@ -4,7 +4,6 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const { expressjwt } = require("express-jwt");
 const routes = require("./routes/index");
-// const middlewareUser = require('./middleware/auth')
 
 require("dotenv").config();
 
@@ -32,21 +31,14 @@ app.use(cors({
     origin: '*',
     credentials: true
 }))
-// app.use(middlewareUser())
-// const handleAuthenticationMiddleware = (req, res,next) => {
-//     console.log("req.auth:URL_______>",req.url)
-//     console.log("req.auth:_______>",req)
-  //  if(req.auth.role.description === "admin" )
-//     next()
-// }
+
 app.use(
     expressjwt({
         secret: process.env.SECRET, algorithms: ["HS256"],
-    }).unless({ path: ["/auth"]  }),
-    // handleAuthenticationMiddleware()
+    }).unless({ path: ["/, /auth"]  }),
 )
 app.use(function (err, req, res, next) {
-    console.log("unuthorized middleware err:", err)
+    console.log("unauthorized middleware err:", err)
     if (err.name === "UnauthorizedError") {
         console.log(err)
       res.status(401).send("Token inválido");
@@ -63,9 +55,6 @@ app.get('/', (req, res) => {
     res.json({ msg: 'API conectada ;)' })
 })
 app.use('/', routes)
-
-
-//middlewareUser()
 
 const PORT = process.env.PORT || 8000;
 const server = app.listen(PORT, () => {

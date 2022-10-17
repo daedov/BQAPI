@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-//diferencia entre mongoose.Types.ObjectId y Schema.Types.ObjectId?
 const orderSchema = new Schema({
   userId: 
     {
-      type: Schema.Types.ObjectId, // id: 'oiasiuss88999']
+      type: Schema.Types.ObjectId, 
       required: true,
     },
   client: {
@@ -44,7 +43,6 @@ const orderSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  // fecha cambia cuando status cambia a delivered?
   dataProcessed: {
     type: Date,
   },

@@ -34,7 +34,7 @@ const login = (req, res) => {
         }
     })
     .catch((err) => {
-            res.status(400).json({succes:false, message:'Usuario no encontrado'})
+            res.status(400).json({success:false, message:'Usuario no encontrado'})
     })
 }
 

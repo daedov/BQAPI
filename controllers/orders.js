@@ -28,7 +28,7 @@ const createOrder = (req, res) => {
       return res.status(401).json({ success: false, message: "Para crear una orden debes agregar productos" })
     }
   } else {
-    return res.status(401).json({ success: false, message: "No tienes permiso para crear ordenes, acercate a un mesero" })
+    return res.status(401).json({ success: false, message: "No tienes permiso para crear ordenes, acércate a un mesero" })
   }
 }
 const getOrders = (req, res) => {
